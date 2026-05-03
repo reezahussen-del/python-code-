@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order</title>
+</head>
+<body style="text-align:center;">
+    {% if success %}
+        <h1>✅ Order Placed!</h1>
+        <h2>Thank you, {{ name }} 🎉</h2>
+        <a href="/">Go Home</a>
+    {% else %}
+        <h1>📦 Enter Delivery Details</h1>
+        <form method="POST">
+            <input type="text" name="name" placeholder="Your Name" required><br><br>
+            <textarea name="address" placeholder="Address" required></textarea><br><br>
+            <button type="submit">Place Order</button>
+        </form>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Delivery</title>
+    <style>
+        body { font-family: Arial; background: #f8f8f8; text-align:center; }
+        .card {
+            display:inline-block; padding:20px; margin:15px;
+            background:white; border-radius:10px; box-shadow:0 0 10px gray;
+        }
+        a { text-decoration:none; color:white; background:green; padding:8px 15px; }
+    </style>
+</head>
+<body>
+    <h1>🍔 Food Menu</h1>
+    <a href="/cart">🛒 View Cart</a>
+    <br><br>
+
+    {% for item in menu %}
+    <div class="card">
+        <h2>{{ item.name }}</h2>
+        <p>₹{{ item.price }}</p>
+        <a href="/add/{{ item.id }}">Add to Cart</a>
+    </div>
+    {% endfor %}
+</body>
+</html>
